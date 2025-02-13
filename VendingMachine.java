@@ -12,6 +12,13 @@ public class VendingMachine {
                 {"Cheez-Itz", "Goldfish", "Oreos", "Ruffles"},
                 {"Takis", "Air Heads", "Water", "Chex mix"}
             };
+
+        int[][] prices = {
+            {1,2,3,1},
+            {2,3,1,2},
+            {2,2,3,3},
+            {2,2,1,4}
+        };
         
         System.out.println("Here is what we have:");
 
@@ -41,6 +48,68 @@ public class VendingMachine {
         }
         System.out.print("\nEnter the letter and number of the snack you want to buy: ");
         String choice = scanner.nextLine();
+
+        String letter = choice.substring(0,1);
+        String num = choice.substring(1);
+        int number = Integer.parseInt(num);
+
+        System.out.println(letter);
+
+        int x = 0; 
+        int y = 0;
+
+        switch (letter) {
+            case "A":
+                x = 0;
+                break;
+
+            case "B":
+                x = 1;
+                break;
+
+            case "C":
+                x = 2;
+                break;
+
+            case "D":
+                x = 3;
+                break;
+        
+            default:
+                System.out.println("Didnt enter valid letter");
+                System.exit(0);
+                break;
+        }
+
+
+        switch (number) {
+            case 1:
+                y = 0;
+                break;
+
+            case 2:
+                y = 1;
+                break;
+
+            case 3:
+                y = 2;
+                break;
+
+            case 4:
+                y = 3;
+                break;
+        
+            default:
+                System.out.println("Didnt enter valid number");
+                System.exit(0);
+                break;
+        }
+
+        System.out.println("The item you picked is " + snacks[y][x]);
+
+
+
+
 
 
     }
